@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="EnJ-NY-bMb">
-                                <rect key="frame" x="20" y="64" width="374" height="204"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EnJ-NY-bMb">
+                                <rect key="frame" x="20" y="64" width="374" height="378"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6ee-aU-EAZ">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="120"/>
@@ -40,26 +40,52 @@
                                                 <state key="normal" title="Start SDK">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onStartSDK:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n3Y-zx-BxW"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session Response" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDP-du-VEE">
+                                        <rect key="frame" x="0.0" y="128" width="374" height="100"/>
+                                        <color key="backgroundColor" systemColor="placeholderTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="34V-IC-oPj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IBC-dq-vec">
-                                        <rect key="frame" x="0.0" y="170" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="236" width="374" height="34"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event Token" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DCd-zE-1nz" userLabel="EventToken">
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event Token" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="DCd-zE-1nz" userLabel="EventToken">
                                                 <rect key="frame" x="0.0" y="0.0" width="183" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3F-Qb-2g3" userLabel="SendEvent">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3F-Qb-2g3" userLabel="SendEvent">
                                                 <rect key="frame" x="191" y="0.0" width="183" height="34"/>
-                                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <state key="normal" title="Send Event">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onSendEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PZo-HK-dSJ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Response" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5M-gW-3AC" userLabel="Event Response">
+                                        <rect key="frame" x="0.0" y="278" width="374" height="100"/>
+                                        <color key="backgroundColor" systemColor="placeholderTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="xgw-ph-kZv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -71,6 +97,15 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EnJ-NY-bMb" secondAttribute="trailing" constant="20" id="vyL-Zx-QKW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addressTextField" destination="4ep-9q-yjI" id="GY9-mi-PMN"/>
+                        <outlet property="appTokenTextField" destination="EcU-5J-q5D" id="ihk-Iv-G0J"/>
+                        <outlet property="eventResponse" destination="d5M-gW-3AC" id="Hqv-hQ-N2O"/>
+                        <outlet property="eventTokenTextField" destination="DCd-zE-1nz" id="Nsy-6m-rV6"/>
+                        <outlet property="sendEventButton" destination="K3F-Qb-2g3" id="UP2-tj-6Ve"/>
+                        <outlet property="sessionResponse" destination="xDP-du-VEE" id="kAS-oC-lg6"/>
+                        <outlet property="startSDKButton" destination="08B-qo-Hlt" id="79W-iE-Pcw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,11 +116,14 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="placeholderTextColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
